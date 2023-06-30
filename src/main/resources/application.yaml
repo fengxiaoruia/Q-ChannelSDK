@@ -1,0 +1,35 @@
+server:
+  port: 2001
+
+spring:
+  application:
+    name: channel-sdk
+  main:
+    allow-bean-definition-overriding: true
+
+
+bot:
+  botAppId: XXXX #botAppId
+  botSecret: XXXX #botSecret
+  botToken: XXXX #botToken
+  botType: 1 # 0为正式环境 1为测试环境
+
+
+
+springdoc:
+  paths-to-match: /** # 匹配路径列表，逗号分隔
+  packages-to-scan: com.feng.controller # 要扫描组的包列表（逗号分隔）
+  writer-with-default-pretty-printer: true # 实现OpenApi规范的打印。
+  swagger-ui:
+    enabled: true # 启用 swagger-ui 端点
+    displayRequestDuration: true # 布尔值。控制“试用”请求的请求持续时间（毫秒）的显示。
+    docExpansion: none # 字符串类型，一共三个值来控制操作和标记的默认展开设置。它可以是“list”（仅展开标记）、“full”（展开标记和操作）或“none”（不展开任何内容）。
+    showExtensions: true # 布尔值。控制供应商扩展（x-）字段和操作、参数和架构值的显示。
+    showCommonExtensions: true  # 布尔值。控制参数的扩展名（pattern、maxLength、minLength、maximum、minminimum）字段和值的显示。
+    disable-swagger-default-url: true # 布尔值。禁用swagger用户界面默认petstore url
+  api-docs:
+    enabled: true # 启用 springdoc-openapi 端点
+    resolve-schema-properties: true # # 布尔值。在@Schema（名称name、标题title和说明description，三个属性）上启用属性解析程序。
+  group-configs: # 默认分组
+    - group: default
+      paths-to-match: /*
